@@ -57,15 +57,11 @@ export default class Game extends React.Component {
         `Go to move #${idx} (${step.coord[0]}, ${step.coord[1]})` :
         "Go to game start";
 
-      let boldStyling = null;
-      if (idx === stepNumber) {
-        boldStyling = { fontWeight: "bold" };
-      }
       return (
         <li key={idx}>
           <button
+            className={`${idx === stepNumber ? "selected" : ""}`}
             onClick={() => this.jumpTo(idx)}
-            style={boldStyling}
           >
             {description}
           </button>
