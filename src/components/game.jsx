@@ -9,7 +9,7 @@ export default class Game extends React.Component {
         squares: Array(9).fill(null),
       }],
       xIsNext: true,
-      stepNumber: 0,
+      stepNumber: 0
     };
   }
 
@@ -25,9 +25,9 @@ export default class Game extends React.Component {
     squares[i] = xIsNext ? "X" : "O";
     this.setState((prevState) => {
       return {
-        history: prevState.history.concat([{ squares }]),
+        history: history.concat([{ squares }]),
         xIsNext: !prevState.xIsNext,
-        stepNumber: history.length,
+        stepNumber: history.length
       };
     });
   }
@@ -36,7 +36,7 @@ export default class Game extends React.Component {
     this.setState(() => {
       return {
         stepNumber: idx,
-        xIsNext: (idx % 2) === 0,
+        xIsNext: (idx % 2) === 0
       };
     });
   }
@@ -91,7 +91,7 @@ export default class Game extends React.Component {
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
-      [2, 4, 6],
+      [2, 4, 6]
     ];
 
     for (let i = 0; i < lines.length; i++) {
